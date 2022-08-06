@@ -1,4 +1,3 @@
-//乱杖写的这个api把我都整迷
 var pluginName = "CrossServer";
 let pluginDescrition = "跨服插件,带MOTD和白名单限时的跨服插件";
 let pluginVersion = [1, 0, 0];
