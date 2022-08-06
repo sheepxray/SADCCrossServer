@@ -26,6 +26,27 @@ const API_Data = new JsonConfigFile(
 const WL_Data = new JsonConfigFile(
   `./plugins/RTplugins/${pluginName}/data/allowData.json`
 );
+function updatecheck()
+network.httpGet('https://fastly.jsdelivr.net/gh/sheepxray/SADCCrossServer/version.json', function (st, dat) {
+		if (st == 200) {
+			let version_lastest = JSON.parse(dat).version
+			if (version_lastest != Version) {
+				log(lang.Get_NewVersion.replace("{version_lastest}", version_lastest))
+				network.httpGet('https://fastly.jsdelivr.net/gh/sheepxray/SADCCrossServer/SADCCrossServer.lxl.js', function (st2, dat2) {
+					if (st2 == 200) {
+						let plugin = dat2.replace(/\r/g, '');
+						file.writeTo("plugins/SADCCrossServer.js", plugin)
+						log(lang.UpdatePlugin_Successful)
+						mc.runcmdEx("lxl reload SADCCrossServer.js")
+					}
+					else {
+						log(lang.UpdatePlugin_Error)
+					}
+				})
+			}
+		}
+  	})
+
 function isNum(content) {
   let result = /^\d+$/.test(content);
   return result;
