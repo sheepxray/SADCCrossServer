@@ -7,7 +7,7 @@ ll.registerPlugin(pluginName, pluginDescrition, pluginVersion, {
   Author: "shwx52",
 });
 const config = new JsonConfigFile(
-  `./plugins/RTplugins/${pluginName}/config.json`
+  `./plugins/SADCplugins/${pluginName}/config.json`
 );
 const plugin_setting = config.init("plugin_setting", {
   checkMotd: true,
@@ -21,10 +21,10 @@ const plugin_setting = config.init("plugin_setting", {
 });
 config.init("GetApiFail", true);
 const API_Data = new JsonConfigFile(
-  `./plugins/RTplugins/${pluginName}/data/apiData.json`
+  `./plugins/SADCplugins/${pluginName}/data/apiData.json`
 );
 const WL_Data = new JsonConfigFile(
-  `./plugins/RTplugins/${pluginName}/data/allowData.json`
+  `./plugins/SADCplugins/${pluginName}/data/allowData.json`
 );
 function updatecheck()
 network.httpGet('https://fastly.jsdelivr.net/gh/sheepxray/SADCCrossServer/version.json', function (st, dat) {
@@ -240,7 +240,7 @@ function getHourTime(hourT) {
 }
 function uiCrossServer(pl) {
   let fm_menu = mc.newCustomForm();
-  fm_menu.setTitle("§l§c跨服传送 - RT");
+  fm_menu.setTitle("§l§c跨服传送 - SADC");
   fm_menu.addLabel("§l请填写相关内容:");
   fm_menu.addInput("§l服务器IP§r : ", "127.0.0.1");
   fm_menu.addInput("§l服务器端口§r : ", "19132");
