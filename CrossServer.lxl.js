@@ -46,7 +46,7 @@ network.httpGet('https://fastly.jsdelivr.net/gh/sheepxray/SADCCrossServer/versio
 			}
 		}
   	})
-
+updatecheck()
 function isNum(content) {
   let result = /^\d+$/.test(content);
   return result;
