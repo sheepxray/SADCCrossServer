@@ -11,13 +11,13 @@ const config = new JsonConfigFile(
 );
 const plugin_setting = config.init("plugin_setting", {
   checkMotd: true,
-  checkMotdServer: "https://motd.smgoro.top/api?host=",
+  checkMotdServer: "https://motdbe.blackbe.xyz/api?host=",
   playerUseCmd: false,
   regCmd: "kf",
   regCmdDe: "使用跨服传送",
   regCmdWl: "kfwl",
   regCmdDeWl: "设置跨服白名单",
-  WhiteList: ["127.0.0:19132", "anlmc.top:1007"],
+  WhiteList: ["127.0.0:19132"],
 });
 config.init("GetApiFail", true);
 const API_Data = new JsonConfigFile(
@@ -46,7 +46,7 @@ network.httpGet('https://fastly.jsdelivr.net/gh/sheepxray/SADCCrossServer/versio
 			}
 		}
   	})
-updatecheck()
+
 function isNum(content) {
   let result = /^\d+$/.test(content);
   return result;
@@ -107,6 +107,7 @@ function motdApi(iport, pl) {
   });
   return true;
 }
+updatecheck()
 function strToJson(str) {
   let json = eval("(" + str + ")");
   return json;
