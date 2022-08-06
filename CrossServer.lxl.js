@@ -347,4 +347,4 @@ mc.listen("onServerStarted", () => {
   cmd1.setup();
 });
 ll.export(MotdUihints, "kfFun_Rt");
-logger.info(pluginDescrition + "加载完成! ===>作者: 乱杖先生");
+logger.info(pluginDescrition + "加载完成! ===>作者: shwx52");
