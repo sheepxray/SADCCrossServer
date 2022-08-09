@@ -215,6 +215,7 @@ function timeCompare(oldTime) {
     return false;
   }
 }
+// 1
 function getHourTime(hourT) {
   let date = Date.now();
   let hourMS = parseInt(Math.abs(hourT)) * 3600000;
